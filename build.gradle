@@ -1,0 +1,23 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath "io.ratpack:ratpack-gradle:1.1.1"
+  }
+}
+
+apply plugin: "io.ratpack.ratpack-java"
+
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  compile 'com.newrelic.agent.java:newrelic-api:3.24.1'
+  runtime "org.slf4j:slf4j-simple:1.7.12"
+}
+
+applicationDefaultJvmArgs = ["-javaagent:/home/iqmsoft/newrelic/newrelic.jar"]
+mainClassName = "com.iqmsoft.relic.ratpack.Main"
